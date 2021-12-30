@@ -6,6 +6,7 @@ tce-load -i squashfs-tools
 
 ########### compile #########
 
+wget https://github.com/RTIMULib/RTIMULib2.git
 cd RTIMULib2-master/Linux/python
 python3 setup.py build
 sudo python3 setup.py install
