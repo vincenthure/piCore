@@ -27,7 +27,8 @@ cd build
 export CFLAGS="-march=armv6zk -mtune=arm1176jzf-s -mfpu=vfp"
 export CXXFLAGS="-march=armv6zk -mtune=arm1176jzf-s -mfpu=vfp"
 
-sudo /mnt/mmcblk0p2/gcc/configure --prefix=/usr/local --enable-languages=c,c++,fortran --disable-multili
+sudo ./configure --prefix=/usr/local --enable-languages=c,c++,fortran --disable-multili
 b --disable-bootstrap --with-system-zlib --libexecdir=/usr/local/lib
 
+ make -j 4  DESTDIR=/mnt/mmcblk0p2/build
 
