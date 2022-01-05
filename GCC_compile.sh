@@ -7,7 +7,7 @@ sudo scp vincent@192.168.0.15:/Volumes/DATA/vincent/gcc.zip  gcc.zip
 sudo unzip gcc.zip
 
 tce-load -i compiletc perl5 bash mpc-dev udev-lib-dev texinfo coreutils glibc_apps rsync gettext python3.6 git 
-tce-load -i mpc-dev gmp-dev mpfr-dev
+tce-load -i mpc-dev gmp-dev mpfr-dev coreutils
 cd /mnt/mmcblk0p2
 
 ######### expand swap file #############
