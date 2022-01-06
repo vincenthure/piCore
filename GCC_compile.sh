@@ -9,6 +9,7 @@ sudo unzip gcc.zip
 tce-load -i compiletc perl5 bash mpc-dev udev-lib-dev texinfo coreutils glibc_apps rsync gettext python3.6 git 
 tce-load -i mpc-dev gmp-dev mpfr-dev coreutils
 cd /mnt/mmcblk0p2
+sudo git clone https://gcc.gnu.org/git/gcc.git
 
 ######### expand swap file #############
  
@@ -21,13 +22,11 @@ free -m
 
 ########## compile #################
 
-sudo mkdir build
-cd build
+cd gcc
+sudo mkdir gcc-build
+cd gcc-build
 
-export CFLAGS="-march=armv6zk -mtune=arm1176jzf-s -mfpu=vfp"
-export CXXFLAGS="-march=armv6zk -mtune=arm1176jzf-s -mfpu=vfp"
+sudo ../configure --prefix=$HOME/gcc-trunk --enable-languages=c,fortran --enable-checking=release --disable-bootstrap --disable-build-poststage1-with-cxx --disable-libstdcxx-pch
 
-sudo ./configure --prefix=/usr/local --enable-languages=c,c++,fortran --disable-multilib --disable-bootstrap --with-system-zlib --libexecdir=/usr/local/lib
-
-sudo make -j 4  DESTDIR=/mnt/mmcblk0p2/build
+sudo make -j 4
 
