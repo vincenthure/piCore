@@ -9,10 +9,10 @@ sudo mkswap swapfile
 sudo swapon swapfile
 free -m
 
-tce-load -i compiletc gfortan
+tce-load -i compiletc gfortran
 
-wget https://ftpmirror.gnu.org/octave/octave-6.4.0.tar.gz && \
-tar -xzf octave-6.4.0.tar.gz                               && \
+wget https://ftpmirror.gnu.org/octave/octave-6.4.0.tar.gz
+tar -xzf octave-6.4.0.tar.gz
 cd octave-6.4.0
 
 ########## compile #################
