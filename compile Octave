@@ -1,0 +1,24 @@
+######### expand swap file #############
+ 
+sudo dd if=/dev/zero of=swapfile1 bs=1024 count=1024000
+sudo chown root:root swapfile
+sudo chmod 0600 swapfile
+sudo mkswap swapfile
+sudo swapon swapfile
+free -m
+
+tce-load -i compiletc gfortan
+
+wget https://ftpmirror.gnu.org/octave/octave-6.4.0.tar.gz && \
+tar -xzf octave-6.4.0.tar.gz                               && \
+cd octave-6.4.0
+
+########## compile #################
+
+sudo mkdir .build
+cd .build
+
+./../configure --prefix=$HOME/my_octave 
+make -j4                           
+make check
+make install
