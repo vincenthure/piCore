@@ -1,0 +1,21 @@
+cd /tmp
+mkdir -p rtimulib/usr/local/lib
+mkdir -p rtimulib/usr/local/include/IMUDrivers
+
+########### move file to tempory folder #############
+
+cd /usr/local/lib
+sudo cp libRTI* /tmp/rtimulib/usr/local/lib
+
+cd /usr/local/include
+sudo cp RT* /tmp/rtimulib/usr/local/include
+
+cd /usr/local/include/IMUDrivers
+sudo cp * /tmp/rtimulib/usr/local/include/IMUDrivers
+
+cd /tmp
+
+################ make tcz file ##############
+
+mksquashfs rtimulib rtimulib.tcz
+cp -v rtimulib.tcz /etc/sysconfig/tcedir/optional
