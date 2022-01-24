@@ -1,3 +1,7 @@
+git clone https://github.com/RTIMULib/RTIMULib2.git
+
+cd RTIMUlib2/RTIMULib
+
 mkdir build
 cd build
 cmake ..
