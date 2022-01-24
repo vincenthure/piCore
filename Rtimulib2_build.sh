@@ -7,6 +7,8 @@ tce-load -i squashfs-tools
 ########### compile #########
 
 wget -c https://github.com/RTIMULib/RTIMULib2.git
+modifier #define KALMAN_RVALUE	0.0005f dans RTIMULib/RTFusionKalman4.cpp
+
 cd RTIMULib2-master/Linux/python
 python3 setup.py build
 sudo python3 setup.py install
