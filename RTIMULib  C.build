@@ -1,6 +1,6 @@
 git clone https://github.com/RTIMULib/RTIMULib2.git
 
-cd RTIMUlib2/RTIMULib
+cd RTIMULib2/RTIMULib
 
 modifier #define KALMAN_RVALUE	0.002f dans RTIMULib/RTFusionKalman4.cpp
 
