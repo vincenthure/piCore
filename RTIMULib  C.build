@@ -1,9 +1,19 @@
+########### load dependency ############
+
+tce-load -i comiletc
+tce-load -i cmake
+tce-load -i squashfs-tools
+
+########### download git ##############
 git clone https://github.com/RTIMULib/RTIMULib2.git
 
 cd RTIMULib2/RTIMULib
 
-modifier #define KALMAN_RVALUE	0.002f dans RTIMULib/RTFusionKalman4.cpp
+############### modify for better performance #############
 
+#define KALMAN_RVALUE	0.002f dans RTFusionKalman4.cpp
+
+########## compile ###################"
 mkdir build
 cd build
 cmake ..
@@ -11,20 +21,23 @@ make -j4
 sudo make install
 sudo ldconfig
 
+########### move file to tempory folder #############
+
 cd /tmp
 mkdir -p rtimulib/usr/local/lib
 mkdir -p rtimulib/usr/local/include/IMUDrivers
 
-########### move file to tempory folder #############
-
 cd /usr/local/lib
 sudo cp libRTI* /tmp/rtimulib/usr/local/lib
+ls /tmp/rtimulib/usr/local/lib
 
 cd /usr/local/include
 sudo cp RT* /tmp/rtimulib/usr/local/include
+ls /tmp/rtimulib/usr/local/include
 
 cd /usr/local/include/IMUDrivers
 sudo cp * /tmp/rtimulib/usr/local/include/IMUDrivers
+ls /tmp/rtimulib/usr/local/include/IMUDrivers
 
 cd /tmp
 
