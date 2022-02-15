@@ -1,8 +1,9 @@
 ########### load dependency ############
 
-tce-load -i comiletc
+tce-load -i compiletc
 tce-load -i cmake
 tce-load -i squashfs-tools
+tce-load -i git
 
 ########### download git ##############
 git clone https://github.com/RTIMULib/RTIMULib2.git
